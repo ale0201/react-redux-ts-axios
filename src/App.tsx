@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './App.less';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import routes from './router/route'
 import store from './store/index'
 import { Provider } from 'react-redux'

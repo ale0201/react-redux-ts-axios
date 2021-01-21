@@ -9,9 +9,10 @@ const mapDispatchToProps = {
   login: () => ({ type: 'login', data: { loginState: 'has-login' } }),
 }
 
-const PageOne: FC = (props) => {
+const PageOne: FC = (props, state) => {
   const { status, login } = props as any
-  let [loginState, changeLogin] = useState({ state: '未登录' });
+  let [loginState, changeLogin] = useState({ state: '未登录' })
+  let [memberState] = useState({ state: true })
   const change = () => {
     loginState = { ...loginState, state: '已登录' }
     changeLogin(loginState)
@@ -24,12 +25,12 @@ const PageOne: FC = (props) => {
     queryInvestInfo(1001, {})
       .then((res: any) => {
         if (res && res.info && res.info.reasonList) {
-          const reasonList = res.info.reasonList
-          console.log('>>>', reasonList)
+          // const reasonList = res.info.reasonList
+          // console.log('>>>', reasonList)
         }
       })
       .catch(err => {
-        console.log('>>>', err)
+        // console.log('>>>', err)
       })
     return function cleanup() {
       // 下次执行前先执行
@@ -45,7 +46,7 @@ const PageOne: FC = (props) => {
       </Link>
       <button onClick={login}>redux改变状态</button><br /><br />
       <button onClick={change}>page改变状态</button><br /><br />
-      <PageChild name='1' score='2' cb={handleChild} />
+      <PageChild name='1' score='2' cb={handleChild} isMember={memberState.state} />
     </div>
   );
 }
