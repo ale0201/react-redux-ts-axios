@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import 'antd/dist/antd.css';
 import './App.less';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import routes from './router/route'

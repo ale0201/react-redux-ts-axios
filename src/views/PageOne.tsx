@@ -32,10 +32,10 @@ const PageOne: FC = (props, state) => {
       .catch(err => {
         // console.log('>>>', err)
       })
-    return function cleanup() {
-      // 下次执行前先执行
+    // return function cleanup() {
+    //   // 下次执行前先执行
 
-    };
+    // };
   }, []);
   return (
     <div>
